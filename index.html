@@ -1,11 +1,154 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My First Page</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Anderson International — IT Services</title>
+  <meta name="description" content="Anderson International provides IT services and sends account-related notifications to users." />
+  <style>
+    :root{
+      --bg:#0b1220;
+      --card:#101b33;
+      --text:#e8eefc;
+      --muted:#b9c6e6;
+      --accent:#6aa6ff;
+      --border: rgba(255,255,255,.12);
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, "Noto Sans", "Liberation Sans", sans-serif;
+      color:var(--text);
+      background: radial-gradient(1200px 600px at 20% 0%, rgba(106,166,255,.25), transparent 55%),
+                  radial-gradient(900px 500px at 90% 10%, rgba(99,102,241,.22), transparent 60%),
+                  var(--bg);
+      line-height:1.45;
+    }
+    a{color:var(--accent); text-decoration:none}
+    a:hover{text-decoration:underline}
+    header{
+      padding:48px 20px 18px;
+      max-width: 980px;
+      margin: 0 auto;
+    }
+    .brand{
+      display:flex; gap:12px; align-items:center;
+    }
+    .logo{
+      width:40px;height:40px;border-radius:10px;
+      background: linear-gradient(135deg, rgba(106,166,255,.95), rgba(99,102,241,.95));
+      box-shadow: 0 12px 30px rgba(0,0,0,.35);
+    }
+    h1{margin:0; font-size:28px; letter-spacing:.2px}
+    .subtitle{margin:10px 0 0; color:var(--muted); max-width:70ch}
+    main{
+      max-width: 980px;
+      margin: 0 auto;
+      padding: 20px;
+      padding-bottom: 56px;
+    }
+    .grid{
+      display:grid;
+      grid-template-columns: 1.2fr .8fr;
+      gap:18px;
+      margin-top: 18px;
+    }
+    @media (max-width: 860px){
+      .grid{grid-template-columns: 1fr}
+    }
+    .card{
+      background: rgba(16,27,51,.78);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 18px 18px;
+      box-shadow: 0 18px 40px rgba(0,0,0,.35);
+      backdrop-filter: blur(6px);
+    }
+    h2{margin:0 0 10px; font-size:18px}
+    ul{margin:10px 0 0; padding-left:18px; color:var(--muted)}
+    .notice{
+      border-left: 4px solid var(--accent);
+      padding: 12px 14px;
+      background: rgba(106,166,255,.08);
+      border-radius: 12px;
+      color: var(--text);
+      margin-top: 10px;
+    }
+    .muted{color:var(--muted)}
+    footer{
+      border-top: 1px solid var(--border);
+      color: var(--muted);
+      padding: 18px 20px;
+      text-align:center;
+    }
+    .pill{
+      display:inline-block;
+      padding:6px 10px;
+      border:1px solid var(--border);
+      border-radius:999px;
+      font-size: 13px;
+      color: var(--muted);
+      margin-top: 10px;
+    }
+  </style>
 </head>
+
 <body>
-    <h1>Hello, GitHub!</h1>
+  <header>
+    <div class="brand">
+      <div class="logo" aria-hidden="true"></div>
+      <div>
+        <h1>Anderson International</h1>
+        <div class="pill">IT Services • Account Notifications</div>
+      </div>
+    </div>
+    <p class="subtitle">
+      We provide IT-related services including systems support, cloud operations, and managed technology solutions for businesses.
+    </p>
+  </header>
+
+  <main>
+    <div class="grid">
+      <section class="card">
+        <h2>What we do</h2>
+        <p class="muted">
+          Anderson International delivers practical IT services to help organizations deploy, maintain, and secure their technology.
+        </p>
+        <ul>
+          <li>IT support and troubleshooting</li>
+          <li>Cloud setup and administration (AWS-compatible workloads)</li>
+          <li>Monitoring, uptime, and operational support</li>
+          <li>Security best practices and access management</li>
+        </ul>
+
+        <div class="notice">
+          <strong>Account notifications:</strong>
+          <div>We send notifications to our users about their accounts.</div>
+        </div>
+      </section>
+
+      <aside class="card">
+        <h2>Contact</h2>
+        <p class="muted">
+          For support or account questions, email us:
+        </p>
+        <p style="font-size:16px; margin:10px 0 0;">
+          <a href="mailto:contact@andersonintln.com">contact@andersonintln.com</a>
+        </p>
+
+        <p class="muted" style="margin-top:14px;">
+          This website is provided for informational and contact purposes.
+        </p>
+      </aside>
+    </div>
+  </main>
+
+  <footer>
+    © <span id="year"></span> Anderson International. All rights reserved.
+  </footer>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
